@@ -1,0 +1,58 @@
+Q3.
+
+def print_a_frame(*words):
+    box = max(len(word) for word in words)
+    print('*' * (box + 4))
+
+    for word in words:
+        print('* {:<{}} *'.format(word, box))
+    print('*' * (box + 4))
+
+print_a_frame("Hello", "World", "in", "a", "frame")
+
+=====================
+Q11.
+
+def check_if_palindrome(x):
+
+#Checks if the given string is palindrome
+    if x == x[::-1]:
+        return True
+
+
+result_pal = []
+for i in range(444, 323, -1):
+    for j in range(444, 323, -1):
+        result = i * j
+        if check_if_palindrome(str(result)):
+
+            result_pal.append(result)
+
+            print("i =", i, "j = ", j, "for", result)
+
+print(max(result_pal))
+
+=========================
+Q12
+
+def isPrime(n):
+    if n < 2:
+        return "Not a prime"
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# returns the nth prime number
+def nthPrime(n):
+    numberOfPrimes = 0
+    prime = 1
+
+    while numberOfPrimes < n:
+        prime += 1
+        if isPrime(prime):
+            numberOfPrimes += 1
+    return prime
+
+print(nthPrime(10001))
+============
